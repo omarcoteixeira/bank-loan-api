@@ -6,12 +6,15 @@ from settings import (
     SERVER_DEFAULT_PORT
 )
 
+from resources.home import HomeResource
 from resources.user import UserResource
 
 app = Flask(__name__)
 app.secret_key = SERVER_SECRET_KEY
 api = Api(app)
 
+
+api.add_resource(HomeResource, '/')
 api.add_resource(UserResource, '/user/<string:name>')
 
 if __name__ == '__main__':
