@@ -2,7 +2,8 @@ from flask import Flask
 from flask_restful import Api
 
 from settings import (
-    SERVER_SECRET_KEY
+    SERVER_SECRET_KEY,
+    SERVER_DEFAULT_PORT
 )
 
 from resources.user import UserResource
@@ -14,4 +15,4 @@ api = Api(app)
 api.add_resource(UserResource, '/user/<string:name>')
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=SERVER_DEFAULT_PORT)
