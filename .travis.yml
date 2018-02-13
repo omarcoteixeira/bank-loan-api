@@ -1,0 +1,12 @@
+language: python
+python:
+  - '3.5'
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - pytest tests/
+
+env:
+  - SERVER_SECRET_KEY=TRAVIS_BUILD_KEY  SERVER_DEFAULT_PORT=5000

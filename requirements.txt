@@ -2,3 +2,4 @@ flask
 flask-restful
 Flask-JWT
 python-dotenv
+pytest
