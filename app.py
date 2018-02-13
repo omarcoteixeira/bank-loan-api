@@ -15,4 +15,4 @@ api = Api(app)
 api.add_resource(UserResource, '/user/<string:name>')
 
 if __name__ == '__main__':
-    app.run(port=SERVER_DEFAULT_PORT)
+    app.run(port=SERVER_DEFAULT_PORT or 5000)
