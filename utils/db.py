@@ -1,11 +1,10 @@
-import os
-import urlparse
 import psycopg2
+from urllib import parse
 
 from settings import DATABASE_URL
 
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(DATABASE_URL)
+parse.uses_netloc.append("postgres")
+url = parse.urlparse(DATABASE_URL)
 
 
 def execute():
