@@ -8,6 +8,8 @@ from settings import (
 
 from resources.home import HomeResource
 from resources.user import UserResource
+from utils.db import execute
+
 
 app = Flask(__name__)
 app.secret_key = SERVER_SECRET_KEY
@@ -19,3 +21,4 @@ api.add_resource(UserResource, '/user/<string:name>')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=SERVER_DEFAULT_PORT)
+    execute()
