@@ -16,6 +16,8 @@ def execute():
         port=url.port
     )
 
+    print conn
+
     cur = conn.cursor()
 
     cur.execute("CREATE TABLE test (id serial PRIMARY KEY, num integer, data varchar);")
