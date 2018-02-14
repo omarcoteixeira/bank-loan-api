@@ -1,13 +1,14 @@
+import os
+import urlparse
 import psycopg2
-from urllib import parse
 
 from settings import DATABASE_URL
 
+urlparse.uses_netloc.append("postgres")
+url = urlparse.urlparse(DATABASE_URL)
+
 
 def execute():
-    parse.uses_netloc.append("postgres")
-    url = parse.urlparse(DATABASE_URL)
-
     conn = psycopg2.connect(
         database=url.path[1:],
         user=url.username,
@@ -21,7 +22,7 @@ def execute():
     cur.execute("CREATE TABLE test (id serial PRIMARY KEY, num integer, data varchar);")
 
     cur.execute("INSERT INTO test (num, data) VALUES (%s, %s)", (100, "abc'def"))
-    print cur.execute("SELECT * FROM test;")
+    cur.execute("SELECT * FROM test;")
 
     conn.commit()
 
