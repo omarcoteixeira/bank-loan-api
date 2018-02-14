@@ -12,4 +12,4 @@ load_dotenv(dotenv_path, verbose=True)
 
 # Default Environments Variables
 SERVER_SECRET_KEY = os.environ.get("SERVER_SECRET_KEY")
-SERVER_DEFAULT_PORT = int(os.environ.get("SERVER_DEFAULT_PORT", 5000))
+SERVER_DEFAULT_PORT = int(os.environ.get("PORT", 5000))

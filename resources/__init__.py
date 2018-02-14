@@ -1,1 +1,2 @@
-from user import UserResource
+from .user import UserResource
+from .home import HomeResource
