@@ -16,7 +16,7 @@ def execute():
         port=url.port
     )
 
-    print conn
+    print(conn)
 
     cur = conn.cursor()
 
